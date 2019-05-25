@@ -28,19 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pb2 = new System.Windows.Forms.PictureBox();
-            this.pb1 = new System.Windows.Forms.PictureBox();
-            this.pb3 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
@@ -58,7 +52,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Rockwell", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 324);
+            this.label2.Location = new System.Drawing.Point(12, 338);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 30);
             this.label2.TabIndex = 4;
@@ -105,37 +99,12 @@
             this.textBox1.Size = new System.Drawing.Size(248, 20);
             this.textBox1.TabIndex = 8;
             // 
-            // pb2
+            // panel1
             // 
-            this.pb2.Location = new System.Drawing.Point(230, 62);
-            this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(204, 236);
-            this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb2.TabIndex = 1;
-            this.pb2.TabStop = false;
-            this.pb2.Click += new System.EventHandler(this.pb2_Click);
-            // 
-            // pb1
-            // 
-            this.pb1.Image = global::ImageShower.Properties.Resources.img1;
-            this.pb1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pb1.InitialImage")));
-            this.pb1.Location = new System.Drawing.Point(12, 62);
-            this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(202, 236);
-            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb1.TabIndex = 0;
-            this.pb1.TabStop = false;
-            this.pb1.Click += new System.EventHandler(this.pb1_Click);
-            // 
-            // pb3
-            // 
-            this.pb3.Location = new System.Drawing.Point(458, 62);
-            this.pb3.Name = "pb3";
-            this.pb3.Size = new System.Drawing.Size(202, 236);
-            this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb3.TabIndex = 2;
-            this.pb3.TabStop = false;
-            this.pb3.Click += new System.EventHandler(this.pb3_Click);
+            this.panel1.Location = new System.Drawing.Point(63, 74);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(679, 247);
+            this.panel1.TabIndex = 9;
             // 
             // MainScreen
             // 
@@ -143,39 +112,32 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(1123, 500);
+            this.ClientSize = new System.Drawing.Size(889, 606);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pb3);
-            this.Controls.Add(this.pb2);
-            this.Controls.Add(this.pb1);
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Page";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainScreen_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pb1;
-        private System.Windows.Forms.PictureBox pb2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pb3;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

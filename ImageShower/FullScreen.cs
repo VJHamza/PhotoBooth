@@ -12,14 +12,16 @@ namespace ImageShower
 {
     public partial class FullScreen : Form
     {
-        public FullScreen()
+        Image img;
+        public FullScreen(Image image)
         {
             InitializeComponent();
+            img = image;
         }
 
         private void FullScreen_Load(object sender, EventArgs e)
         {
-            FullScreen.ActiveForm.BackgroundImage = MainScreen.image;
+            pictureBox1.Image = img;
         }
 
         private void FullScreen_KeyPress(object sender, KeyPressEventArgs e)
