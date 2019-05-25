@@ -98,21 +98,51 @@ namespace ImageShower
             }
             
         }
+        public void FillPanel2()
+        {
+            Image image;
+            int x = 20, y = 20, maxheight = 100;
+            string[] files = Directory.GetFiles(@"D:\Projects\ImageShower\ImageShower\Resources\Image");
 
+            for (int i = 0; i < files.Length; i++)
+            {
+                image = Image.FromFile(files[i]);
+                PictureBox pb = new PictureBox();
+
+                pb.Image = image;
+                //pb.Image.Dispose();
+                pb.Width = 200;
+                pb.Height = 200;
+                pb.Location = new Point(x, y);
+
+                x += pb.Width + 100;
+                maxheight = Math.Max(pb.Height, maxheight);
+                if (x > this.ClientSize.Width - 100)
+                {
+                    x = 20;
+                    y += maxheight + 10;
+                }
+
+                this.panel2.Controls.Add(pb);
+                pb.Click += new System.EventHandler(this.ClickImage);
+            }
+        }
         private void MainScreen_Load(object sender, EventArgs e)
         {
             Image image;
-            int x = 20, y = 20, maxheight = -1; 
+            int x = 20, y = 20, maxheight = 100;
             string[] files = Directory.GetFiles(@"D:\Projects\ImageShower\ImageShower\Resources");
 
-            for(int i = 0; i < files.Length; i++)
+            for (int i = 0; i < files.Length; i++)
             {
                 image = Image.FromFile(files[i]);
                 PictureBox pb = new PictureBox();
                 pb.Image = image;
-                
+                pb.Width = 200;
+                pb.Height = 200;
                 pb.Location = new Point(x, y);
-                x += pb.Width + 10;
+
+                x += pb.Width + 100;
                 maxheight = Math.Max(pb.Height, maxheight);
                 if (x > this.ClientSize.Width - 100)
                 {
@@ -122,27 +152,39 @@ namespace ImageShower
 
                 this.panel1.Controls.Add(pb);
                 pb.Click += new System.EventHandler(this.ClickImage);
-                
+
             }
-            
+            FillPanel2();
 
-            //DataTable table = new DataTable();
-            //table.Columns.Add("Images");
-
-            //for (int i = 0; i < files.Length; i++)
-            //{
-            //    FileInfo file = new FileInfo(files[i]);
-            //    image = Image.FromFile(file.Directory + file.Name);
-            //    table.Rows.Add(file.Name);
-            //}
-            //dataGridView1.DataSource = table;
 
         }
         public void ClickImage(object sender,EventArgs e)
         {
-            //Image img = (Image)sender;
-            //FullScreen fs = new FullScreen(img);
+            PictureBox img = (PictureBox)sender;
+            
+            
+            FullScreen fs = new FullScreen();
+            fs.Show();
 
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+            
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+            
         }
     }
 }

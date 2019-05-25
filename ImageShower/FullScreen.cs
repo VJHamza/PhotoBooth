@@ -13,10 +13,10 @@ namespace ImageShower
     public partial class FullScreen : Form
     {
         Image img;
-        public FullScreen(Image image)
+        public FullScreen()
         {
             InitializeComponent();
-            img = image;
+            //img = image;
         }
 
         private void FullScreen_Load(object sender, EventArgs e)
